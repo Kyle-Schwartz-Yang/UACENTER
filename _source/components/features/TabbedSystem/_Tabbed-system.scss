@@ -1,0 +1,79 @@
+// @import '../../_elements/CardGame/_CardGame.scss';
+
+
+
+.tab {
+
+
+  &__buttons {
+    @include flexbox(flex, null, center, row, nowrap, 2rem);
+
+
+    &:not(:last-child) {
+      margin: 0px 0px 3rem 0px;
+    }
+
+    @media (max-width: 768px) {
+      @include flexbox(flex, null, flex-start, column, nowrap, 2rem);
+    }
+
+  }
+
+  &__search {
+    width: 100%;
+
+    @media (max-width: 479px) {
+      & .search-default {
+        width: 100%;
+        justify-content: flex-start
+      }
+    }
+
+  }
+
+
+  &__btn {
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    gap: 1.5rem;
+
+    @media (max-width: 479px) {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    & button {
+      padding: 1rem 1.5rem;
+      font-size: 2rem;
+      color: #fff;
+      border: 1px solid var(--color-white);
+
+      &._active {
+        background-color: var(--secondary-color);
+      }
+    }
+
+  }
+
+
+  &__contents {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 479px) {
+      grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
+    }
+
+  }
+}
+
+.tab-content {
+  display: none;
+
+  &._active {
+    display: block;
+  }
+}

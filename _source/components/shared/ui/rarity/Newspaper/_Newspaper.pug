@@ -1,0 +1,20 @@
+
+//-------------------------------------- +newspaper-cutting(Inteenet)
+mixin Newspaper(text)
+  - var colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A8', '#FFD433']
+  - var rotations = ['-5deg', '5deg', '-10deg', '10deg', '0deg']
+  span.newspaper-clipping
+    each letter, index in text.split('')
+      - var color = colors[index % colors.length]
+      - var cbg = colors[index % colors.length + 1]
+      - var rotation = rotations[index % rotations.length]
+      span(style=`transform: rotate(${rotation});`) #{letter}
+
+
+//------------------
+  Каждая буква будет стилизована и окаращенна.
+  В данном случае применяется только повороты rotate(${rotation})
+
+  span(style=`color: ${color};background-color: ${cbg} transform: rotate(${rotation});`) #{letter}
+
+

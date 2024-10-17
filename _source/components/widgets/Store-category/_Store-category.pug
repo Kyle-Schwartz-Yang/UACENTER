@@ -1,0 +1,23 @@
+
+include ../../pages/Sections/_Sections.pug
+
+include ../../features/TabbedSystem/_Tabbed-system.pug
+
+
+//- 
+  PUG
+  ---------| +Tabbed-system() |
+  ---------| +Sections() |
+  STYLE
+  --------| Bootstrap icons |
+//- 
+//- ---------------------------------------------------
+
+mixin Store-category()
+  +Sections('store', 'store-category')
+    .store-page__container
+      .store-page__genre
+        +Tabbed-system('store-category__tabs', 'store-category')
+
+  
+

@@ -1,0 +1,18 @@
+mixin Sidebar(attrs)
+  -
+    const ListData = [
+      {text: 'Про нас', href: '/html/about.html'},
+      {text: 'Зв\'язки', href: '/html/relations.html'},
+      {text: 'Кошти', href: '/html/financing.html'},
+    ]
+  -
+  aside.sidebar&attributes(attrs)
+    .sidebar__container
+      nav.sidebar__nav 
+        h2.sidebar__title: strong Міжнародний <br> фінансово <br>аналітичний центр
+        ul.sidebar__list
+          each item in ListData
+            li: a(href=item.href)=item.text 
+        .sidebar__button 
+          .sidebar__info: <b>126</b> <br> Країн <br> Партнерів  
+          .sidebar__contact: a(href='/html/contacts.html') <b>Contact Us</b>

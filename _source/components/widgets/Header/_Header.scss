@@ -1,0 +1,84 @@
+@import './components/_HeaderMenu.scss';
+// @import '../../shared/components/ToggleTheme/_ToggleTheme.scss';
+
+
+
+
+
+.header {
+  box-shadow: var(--box-shadow-primary);
+  position: fixed;
+  z-index: var(--titan);
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  padding: 2rem 0rem;
+  background-color: var(--color-white);
+
+  &__container {
+    @include flexbox(flex, space-between, center, null, null, null);
+  }
+
+  @media (max-width: 479px) {
+
+    max-height: auto;
+  }
+
+  &__logo {
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+
+
+    & span:nth-of-type(1) {
+      color: #00a2ff;
+    }
+
+    & span:nth-of-type(2) {
+      color: #f5f533;
+    }
+
+    @media (max-width: 479px) {
+
+      clip-path: none;
+    }
+
+    @media (max-width: 992px) {
+      & .logo {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+
+  &__menu {
+    @include flexbox(flex, center, center, null, null, 3rem);
+
+
+    @media (max-width: 479px) {
+
+
+
+      @include flexbox(flex, null, null, row, null, 0.5rem);
+
+
+      & .toggletheme {
+        transform: rotate(-90deg);
+      }
+
+    }
+
+
+
+
+  }
+
+}
+
+
+
+
+// ---------------------------------------------------------------

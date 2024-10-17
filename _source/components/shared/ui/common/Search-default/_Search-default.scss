@@ -1,0 +1,95 @@
+// ----------------------------------------------------- NULL Search (X)
+/* Скрываем крестик в Chrome, Safari */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* Скрываем крестик в IE и Edge */
+input[type="search"]::-ms-clear {
+  display: none;
+}
+
+/* Скрываем крестик в Firefox и других браузерах */
+input[type="search"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+// ----------------------------------------------------- NULL Search (X)
+.search-default {
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  border: 1px solid #333;
+  background-color: transparent;
+  // border: 1px solid red;
+  padding: .5rem;
+  height: 4rem;
+  min-width: 23rem;
+  width: 23rem;
+  @include flexbox(flex, space-between, center, row, nowrap, 0px);
+  background: rgb(32, 32, 32);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(80, 79, 79, 0.8), transparent);
+    transform: skewX(-25deg);
+    z-index: -1;
+    animation-name: shine;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  &.input-focused::after {
+    // animation: none;
+  }
+
+
+  &:hover::after {
+    animation: none;
+  }
+
+
+  &__input {
+    // border: 1px solid red;
+  }
+
+
+  &__button {
+    margin: .5rem 1rem;
+    width: 20px;
+    height: 20px;
+
+    & span {
+      color: #fff;
+    }
+  }
+
+
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  font-family: 'Life Savers';
+  font-size: 1.6rem;
+  color: var(--color-white);
+  padding-right: 1rem;
+  transition: all 0.3s ease-in-out;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, .3);
+  }
+
+  // &:focus {
+  //   box-shadow: 0 4px 8px rgba(237, 236, 239, 0.2), 0 2px 4px rgba(248, 247, 249, 0.2);
+  // }
+}

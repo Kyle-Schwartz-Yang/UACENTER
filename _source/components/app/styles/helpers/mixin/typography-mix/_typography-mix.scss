@@ -1,0 +1,37 @@
+@mixin text-styles($font-family: null, $font-weight: null, $font-size: null, $line-height: null, $letter-spacing: null, ) {
+
+  @if $font-family !=null {
+    font-family: $font-family;
+  }
+
+  @if $font-weight !=null {
+    font-weight: $font-weight;
+  }
+
+  @if $font-size !=null {
+    font-size: $font-size;
+  }
+
+  @if $line-height !=null {
+    line-height: $line-height;
+  }
+
+  @if $letter-spacing !=null {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+/* Использование 
+.heading {
+  @include text-styles($font-size: 3rem, $font-weight: 900);
+}
+
+.paragraph {
+  @include text-styles($font-family: 'Arial, sans-serif', $line-height: 1.8);
+
+  $font-family: null, $font-weight: null, $font-size: null, $line-height: null, $letter-spacing: null,
+}
+*/
+
+
+// ------------------------------------------------------------------------------------------------------------------

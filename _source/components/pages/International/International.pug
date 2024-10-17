@@ -1,0 +1,44 @@
+
+//- ----------------------------Наследственность
+//- extends ../shared/settings/pug/core/_loyaout.pug
+extends ../../app/pug/_loyaout.pug
+//- ----------------------------Наследственность
+
+//-! -------------------------------------- PART
+
+include ../../shared/components/Contact-details/_Contact-details.pug
+
+//-! -------------------------------------- PART
+
+//-* -------------------------------------HEAD
+block settings
+  -
+    var settings = {
+      title: 'Міжнародне резидентство',
+      lang: 'uk',
+    }
+
+block connection
+  link(rel="stylesheet", href=`${stylesPathPage}/style.css`)
+//-* -------------------------------------HEAD
+
+
+//-: --------------------------------------BODY
+
+block content
+
+  main.main 
+    section.international
+      div.international__container
+        h1.international__title.title Міжнародне резидентство
+        div.international__body 
+          p.international__txt Ця комплексна програма розроблена для тих, хто прагне глобальної мобільності та свободи переміщення. Вступ до програми відкриває вам двері для вільного в'їзду та можливості постійного проживання у всіх цивілізованих країнах світу.
+          p.international__txt Ми з вами на всіх етапах: від підготовки пакету документів до пошуку нерухомості. В рамках послуги ми також надаємо рішення щодо податкового планування, соціальної інтеграції та інвестиційних можливостей, забезпечуючи вам комфортний перехід до міжнародного способу життя.
+          p.international__txt Вибираючи міжнародне резидентство з <strong>UA Center</strong>, ви вибираєте світ без обмежень, де кожна країна може стати вашим будинком.
+        article.international__contacts
+          +Contact-details()
+
+block scripts
+  script(type="module", src=`${scriptPathPage}/app.js`)
+//-: --------------------------------------BODY
+

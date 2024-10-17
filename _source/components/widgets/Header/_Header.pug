@@ -1,0 +1,52 @@
+
+include ./components/_HeaderMenu.pug
+include ../../shared/components/ToggleTheme/_ToggleTheme.pug
+
+
+mixin Header()
+  -
+    const menu = [
+      {
+        text: 'Головна',
+        href: '/',
+      },
+      {
+        text: 'GR на всіх рівнях',
+        href: '/html/relations.html',
+      },
+      {
+        text: 'Безпека бізнесу',
+        href: '/html/safety.html',
+      },
+      {
+        text: 'Податкове структурування',
+        href: '/html/Tax.html',
+      },
+      {
+        text: 'Фінансування проектів',
+        href: '/html/financing.html',
+      },
+      {
+        text: 'Міжнародне резидентство',
+        href: '/html/international.html',
+      },
+      {
+        text: 'Про нас',
+        href: '/html/about.html',
+      },
+      {
+        text: 'Контакти',
+        href: '/html/contacts.html',
+      },
+
+    ]
+  -
+
+  header.header.fixed-element
+    .header__container
+      a(href="/").header__logo.dark-theme
+        .logo <span>U</span><span>A</span> Center 
+
+      .header__menu
+        +ToggleTheme()
+        +_HeaderMenu(menu)

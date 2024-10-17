@@ -1,0 +1,17 @@
+
+
+mixin Search-default(className)
+  .search-default
+    .search-default__button
+      button(type="button" aria-label='Search store') 
+        <span><i class="bi bi-search"></i></span>
+    .search-default__body
+      //- $ ----INPUT 
+      .search-default__input 
+        input.search-input(
+          type="search" 
+          placeholder="Search Sections..." 
+          class=className 
+          data-search=className)&attributes(attributes)
+      //- .search-default__items
+        

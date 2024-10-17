@@ -1,0 +1,8 @@
+
+include ./components/_InfoModal/_InfoModal.pug
+include ./components/_SignUpModal/_SignUpModal.pug
+
+mixin Modals-group()
+  .modals-group.hidden
+    +SignUpModal()
+    +Info-modal()

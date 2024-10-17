@@ -1,0 +1,131 @@
+.nav {
+  &__container {
+    padding: 0px;
+    border: 1px solid red;
+  }
+
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    font-size: 2rem;
+    margin-right: 2rem;
+    padding: 15px 10px;
+  }
+}
+
+.nav__link,
+.dropdown__link {
+  // border: 1px solid red;
+  @include flexbox(inline-flex, space-between, center, row, nowrap, 10px);
+}
+
+
+.dropdown__link {
+  width: 100%;
+  border: 1px solid yellow;
+}
+
+
+
+.dropdown__menu li {
+  color: white;
+  // width: max-content;
+  background-color: black;
+  padding: 15px 10px;
+}
+
+.dropdown__item,
+.dropdown__sub-item {
+  position: relative;
+  font-size: 20px;
+  padding: 15px 10px;
+  // border: 1px solid red;
+}
+
+
+.dropdown__sub-menu {
+  // display: none;
+  min-width: 300px;
+  position: relative;
+  padding-top: 1rem;
+  padding-left: 10px;
+  top: 0px;
+  left: 0%;
+  border: 1px solid red;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.66s ease;
+}
+
+
+.dropdown__menu {
+  display: none;
+  min-width: 300px;
+  position: absolute;
+  padding-top: 20px;
+  top: 30px;
+  left: 0%;
+
+}
+
+.dropdown__menu .dropdown__menu {
+  min-width: 300px;
+  position: relative;
+  padding-top: 1rem;
+  padding-left: 10px;
+  top: 0px;
+  left: 0%;
+  border: 1px solid red;
+  // max-height: 0;
+  // overflow: hidden;
+  // transition: max-height 0.66s ease;
+  display: none;
+}
+
+
+
+// body.mouse li.dropdown__sub-item:hover>ul.dropdown__sub-menu {
+//   max-height: 500px;
+//   transition: max-height 0.66s ease;
+
+// }
+
+
+
+body.mouse li.dropdown__item:hover>ul.dropdown__menu {
+  display: block;
+}
+
+
+body.touch ul.dropdown__menu._active {
+  display: block;
+}
+
+
+// body.touch ul.dropdown__sub-menu._active {
+//   max-height: 500px;
+//   transition: max-height 0.66s ease;
+// }
+
+
+.dropdown__arrow._active {
+  transform: rotate(90deg);
+}
+
+
+
+
+
+/*
+### Важно оставить первый пунк меню как ссылку :
+- На моб. открытие sub-menu будет по нажатию 
+- На деск. желательно убрать стрелочки(они не нужны) Все открывается при :HOVER
+
+### Не Важно сохранить первый уровень как ссылку ?
+-  На моб. Открытие можно сделать по нажатию на пункты меню
+-  На деск. Можно оставить стрелочки (следуя дизайну)
+
+*/

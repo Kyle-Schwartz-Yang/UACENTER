@@ -1,0 +1,115 @@
+
+
+//- -----------------------------------------------
+include ../../entities/CardProduct/_CardProduct.pug
+
+include ../../shared/ui/common/Search-default/_Search-default.pug
+
+
+//- -----------------------------------------------
+
+
+
+mixin Tabbed-system(uniqueClass, dataTabbedUnique = 'tab', config = {})
+  -
+    const defaultConfig = { 
+      toggleSelector: 'tab-button',
+      contentSelector: 'tab-content', 
+      activeSelector: '_active',
+      buttons: [
+        { unique: 'all', title: 'All', label: 'Go to...' },
+        { unique: 'Horror', title: 'Horror', label: 'Go to...' },
+        { unique: 'Action', title: 'Action', label: 'Go to...' },
+        { unique: 'Survarial', title: 'Survarial', label: 'Go to...' }
+      ],
+      contents: [
+            { 
+              title: 'Sons Of The Forest', 
+              category: 'Horror',
+              txt: 'Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.',
+              image: `${assetsPath}/images/horror-card1.jpg`,
+              newPrice: '97 $',
+              oldPrice: '295 $',
+              likes: '233',
+            },
+            { 
+              title: 'Project Zomboid', 
+              category: 'Horror',
+              txt: 'Project Zomboid is the ultimate in zombie survival. Alone or in MP: you loot, build, craft, fight, farm and fish in a struggle to survive. A hardcore RPG skillset, a vast map, massively customisable sandbox and a cute tutorial raccoon await the unwary. So how will you die? All it takes is a bite..' ,
+              image: `${assetsPath}/images/horror-card2.jpg`,
+              newPrice: '54 $',
+              oldPrice: '105 $',
+              likes: '186',
+            },
+            { 
+              title: 'Black Myth: Wukong', 
+              category: 'Horror',
+              txt: 'Black Myth: Wukong is an action movie based on Chinese mythology. As the Chosen One, you will embark on an adventure full of challenges and wonders, in which you will have to lift the veil of secrecy over the Great One.',
+              image: `${assetsPath}/images/horror-card3.jpg`, 
+              newPrice: '27 $',
+              oldPrice: '665 $',
+              likes: '27',
+            },
+            { 
+            title: 'Naraka: Blandepoin', 
+            category: 'Action', 
+            txt: 'NARAKA: BLADEPOINT is a 60-player battle royale game inspired by the myths and legends of the Far East. The game combines various types of martial arts, a vast arsenal of melee and ranged weapons, as well as many characters with incredible' ,
+            image: `${assetsPath}/images/action-card1.jpg`,
+            },
+            { 
+            title: 'Pubg: Battlegrounds', 
+            category: 'Action', 
+            txt: 'With over 175 awards and 250 top ratings from gaming publications, RDR2 is the epic story of outlaw Arthur Morgan and the Van der Linde gang as they flee the law across America at the dawn of the modern era. Includes free access to co-op play in the world of Red Dead Online...' ,
+            image: `${assetsPath}/images/action-card2.jpg`,
+            },
+            { 
+            
+            title: 'Red Dead Redemption 2', 
+            category: 'Action', 
+            txt: 'Land in strategically important places, get weapons and supplies and try to survive and be the last team left on one of the many battlefields.' ,
+            image: `${assetsPath}/images/action-card3.jpg`,
+            },
+            { 
+            
+              title: 'Valheim', 
+              category: 'Survarial', 
+              txt: 'Apex Legends is an award-winning free-to-play hero shooter from Respawn Entertainment. Master the ins and outs of playing as a growing number of legendary characters and use their powerful skills to inform your squads strategy. This is new...',
+              image: `${assetsPath}/images/survarial-card1.jpg`,
+            },
+            { 
+              title: 'Dont Starve Together', 
+              category: 'Survarial', 
+              txt: 'Fight, Farm, Build and Explore Together in the standalone multiplayer expansion to the uncompromising wilderness survival game, Dont Starve.',
+              image: `${assetsPath}/images/survarial-card2.jpg`,
+            },
+            { 
+              title: 'Apex Legends', 
+              category: 'Survarial', 
+              txt: 'A survival game in which you explore a vast fantasy world steeped in Norse mythology and Viking culture.',
+              image: `${assetsPath}/images/survarial-card3.jpg`,
+            },
+
+      ]
+    }
+    const cfg = Object.assign({}, defaultConfig, config)
+    const selectorParent = 'tab'
+  -
+
+  div(id=selectorParent class=`${selectorParent} ${uniqueClass}` data-tabbed=dataTabbedUnique)
+    //- Кнопки табов
+    
+    div(class=`${selectorParent}__buttons ${uniqueClass}__buttons`)
+      
+      div(class=`${selectorParent}__btn ${uniqueClass}__btn`)
+        each item, index in cfg.buttons
+          button(
+          type='button'
+          class=`${cfg.toggleSelector}` 
+          data-button-system=item.unique)= item.title
+
+      div(class=`${selectorParent}__search ${uniqueClass}__search`)
+        +Search-default('tabbed-categories-search')
+        
+    //- Контент табов
+    div(class=`${selectorParent}__contents ${uniqueClass}__contents`)
+      +CardProduct(cfg.contentSelector, cfg.contents)

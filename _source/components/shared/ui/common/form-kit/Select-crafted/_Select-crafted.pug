@@ -1,0 +1,9 @@
+
+
+mixin Select-crafted(className)
+  -
+    const data = ['18 - 25', '25 - 45', '45 - 99']
+  -
+  select(name="age")(class=`${className}`)
+    each option in data
+      option(value=option) <span>#{option}</span>

@@ -1,0 +1,34 @@
+
+
+mixin Input-radio(name, data={})
+  -
+    let defaultData = {
+      options: [
+        {value: 'Man', label: 'Man', unique: 'formGenderMan',},
+        {value: 'NonBinary', label:' Non Binary', unique: 'formGenderNonBinary', checked: true, },
+        {value: 'Woman', label: 'Woman', unique: 'formGenderWoman',},
+      ]
+    }
+    let finalData = { ...defaultData, ...data }
+    let nameGroup = name ? name : 'default-gender'
+  -
+
+  each option in finalData.options
+    .options
+      .options__item 
+        input(id=option.unique type="radio", name=nameGroup, value=option.value, checked=option.checked).options__input.hidden
+        label(for=option.unique).options__label <span>#{option.label}</span>
+
+
+//-------------------------------------------------
+  Использовать :
+  --------------------------------------------
+    +Input-radio('gender',{options: [
+    {value: 'Man1', label: 'Man1'},
+    {value: 'Children1', label: 'Children1', checked: true},
+    {value: 'Woman1', label: 'Woman1'},
+  ]})
+  -----------------------------------------------
+  - Простой запуск используются значения по умолчанию
+    +Radio-Options() 
+

@@ -1,0 +1,43 @@
+
+include ../../../_elements/Form-Elements/Select-crafted/_Select-crafted.pug
+include ../../../_elements/Form-Elements/Input-radio/_Input-radio.pug
+include ../../../_elements/Form-Elements/Input-file/_Input-file.pug
+include ../../../_elements/Form-Elements/Checkbox/_Checkbox.pug
+include ../../../_elements/Form-Elements/Labeled-input/_Labeled-input.pug
+
+mixin Form-default()
+  .form 
+    form.form__body#form(action = '#')
+      h1.form__title Отправка данных на почту
+      .form__item 
+        //- label.form__label(for='formName') Имя*:
+        //- input.form__input(type="text", name='name' class='_req' placeholder='Введите ваше имя:')#forName
+        +Labeled-input({
+          options: {type: 'text', unique: 'f-default-Name', name: 'name', value: null,placeholder: 'Enter your name', label: 'Your Name ?'},
+          inputAttributes: {['aria-label']: 'Enter your name', class: 'form__input _req'},
+          labelAttributes: {['aria-label']: 'Enter your name', class: 'form__label'},
+          })
+      .form__item 
+        label.form__label(for='formEmail') Email*:
+        input.form__input(type="text", name='email' class='_req _email' placeholder='Введите ваш email')#formEmail
+      .form__item 
+        .form__label Man of Woman ? 
+        //-$---Input Radio Options (mixin)
+        +Input-radio()
+      .form__item 
+        label.form__label(for='formMessage') Message:
+        textarea.form__input(name="message" id='forMessage' placeholder='Say your message, pleasse !' class='_req')
+      .form__item 
+        .form__label Please your age:
+        //-$---Select custom (mixin)
+        +Select-crafted()
+      .form__item 
+        .form__label Attach photo: 
+        //-$---Input File Preview (mixin)
+        +Input-file()
+      .form__item 
+        //-$---Input Checkbox (mixin)
+        +Checkbox()
+
+      button(type="submit").form__submit.button-global Submit
+

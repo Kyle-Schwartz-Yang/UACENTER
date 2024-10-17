@@ -1,0 +1,12 @@
+
+
+
+
+mixin Link(props={})
+  -
+    const {to='#',  className='', title=null,  text = 'Button'} = props
+  a(class=className, href=to, title=title)&attributes(attributes)= text
+
+//- # Использовать: 
+  +Link({className: 'menu__link', href: '/home',title: 'Перейти домой'})(aria-label='goto home')
+

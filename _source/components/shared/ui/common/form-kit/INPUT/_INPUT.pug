@@ -1,0 +1,8 @@
+
+mixin Input( type='text', placeholder='Enter your name', className)
+  input(type='text', class=className, placeholder=placeholder,)&attributes(attributes)
+
+//- # Использование:
+  +Input-universal(type='text', placeholder='Enter your name')(aria-label='Name')
+
+

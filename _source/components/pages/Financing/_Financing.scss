@@ -1,0 +1,82 @@
+.financing {
+
+  // .financing__container
+
+  &__container {}
+
+  // .financing__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // .financing__body
+
+  &__body {
+    max-width: 66%;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  // .financing__txt
+
+  &__txt {
+    & strong {
+      text-transform: uppercase;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  // .financing__list
+
+  &__list {
+    padding-left: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    li {
+      font-style: italic;
+      list-style: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  // .financing__contacts
+
+  &__contacts {}
+}
+
+.contact-details {
+
+  // .contact-details__title
+
+  &__title {}
+
+  // .contact-details__address
+
+  &__address {}
+
+  // .contact-details__item
+
+  &__item {}
+
+  // .contact-details__marker
+
+  &__marker {}
+}

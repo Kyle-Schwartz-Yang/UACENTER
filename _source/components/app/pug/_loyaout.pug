@@ -1,0 +1,55 @@
+
+
+//- -------------------------------------- varibles
+
+include ./settings/_variables.pug
+
+//- -------------------------------------- varibles
+
+//------------------------ common PART
+include ../../widgets/Header/_Header.pug
+include ../../widgets/Footer/_Footer.pug
+include ../../widgets/Sidebar/_Sidebar.pug
+//------------------------ common PART
+
+
+block settings
+  -
+    var settings = {
+      title: 'default name',
+      lang: 'en',
+    }
+
+
+<!DOCTYPE html>
+html(lang=settings.lang)
+
+  head
+    block meta
+      include ./settings/_meta.pug
+      
+    block connection
+      include ./settings/_styles.pug
+
+    block title
+      title #{settings.title}
+  <body>
+    .wrapper
+      block header 
+        +Header()
+        //- есть Общий header ?
+        
+      +Sidebar({class:'fixed-element'})
+      block content
+        h1 Динамическое содержимое:
+
+      block footer
+        +Footer()
+        //- есть Общий footer ?
+
+    block scripts
+      include ./settings/_scripts.pug
+  </body>
+
+
+

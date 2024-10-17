@@ -1,0 +1,65 @@
+
+//- ----------------------------Наследственность
+extends ../../app/pug/_loyaout.pug
+//- ----------------------------Наследственность
+
+//-! -------------------------------------- PART
+include ../../shared/components/Contact-details/_Contact-details.pug
+
+//-! -------------------------------------- PART
+
+//- - const assetsPathPage = '../assets';
+//- - const scriptPathPage = '../script';
+//- - const stylesPathPage = '../css' ;
+
+
+//-* -------------------------------------HEAD
+block settings
+  -
+    var settings = {
+      title: 'Про нас',
+      lang: 'uk',
+    }
+
+    
+block connection
+  link(rel="stylesheet", href=`${stylesPathPage}/style.css`)
+//-* -------------------------------------HEAD
+
+//-: --------------------------------------BODY
+
+block content
+  main.main
+    section.about
+      .about__container
+        header.about-header
+          h1.about-header__title.title Про нас 
+          div.about-header__body
+            p.about-header__txt Міжнародний фінансово-аналітичний центр UA CENTER – зв'язки, гроші та турбота.
+            p.about-header__txt Насамперед ми орієнтовані на підтримку українських та американських бізнесменів у їхньому прагненні стати частиною глобальної спільноти, яка відкриває широкі можливості для розвитку та зростання.
+            blockquote.about-header__txt.about-header__blockquote Креативні рішення для нестандартних проектів – це наш коник. Коли ми впевнені, що забезпечимо надійність, безпеку, стабільність та передбачуваність, лише тоді ми у справі.
+              cite.about-header__cite Верховний командувач
+        article.about-products
+          h2.about-products__title.subtitle Продукты 
+          div.about-products__body
+            nav.about-products__nav
+              ul.about-products__list
+                lI: a(href="/html/relations.html") GR на всіх рівнях
+                lI: a(href="/html/safety.html") Безпека бізнесу
+                lI: a(href="/html/Tax.html") Податкове структурування
+                lI: a(href="/html/financing.html") Фінансування проектів
+                lI: a(href="/html/international.html") Міжнародне резидентство
+            p.about-products__txt Ми будуємо мости між культурами та економіками, які відкривають нові горизонти для інвесторів та підприємців.Насамперед ми орієнтовані на підтримку українських та американських бізнесменів у їхньому прагненні стати частиною глобальної спільноти, яка відкриває широкі можливості для розвитку та зростання.
+        article.about-values
+          h2.about-values__title.subtitle Ценности
+          .about-values__body
+            p.about-values__txt Впечатлять и держать слово.
+            p.about-values__txt Если наша философия вам близка – будем рады знакомству. 
+        article.about__contacts
+          +Contact-details()
+
+block scripts
+  script(type="module", src=`${scriptPathPage}/app.js`)
+//-: --------------------------------------BODY
+
+

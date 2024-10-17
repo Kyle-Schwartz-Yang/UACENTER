@@ -1,0 +1,16 @@
+mixin _HeaderMenu(menu)
+    .menu 
+      button(type="button" aria-label='Open menu' data-action="open-menu").menu__open.dark-theme
+        span Меню
+        span.menu__open-dot
+      nav.menu__cover
+        .menu__body
+          .menu__top
+            a(href="#").logo <span>U</span><span>A</span> Center
+            button(type="button" aria-label='Close menu' data-action="close-menu").menu__close 
+          ul.menu__list
+            each item in menu
+              li: a(href=item.href)=item.text 
+          .menu__bottom
+            .menu__info: <strong>126</strong> <br> Країн <br> Партнерів   
+            .menu__copy: strong &#169; UA CENTER – Міжнародний фінансово-аналітичний центр

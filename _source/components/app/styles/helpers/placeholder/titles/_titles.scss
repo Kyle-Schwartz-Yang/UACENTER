@@ -1,0 +1,16 @@
+//! EXAMPLE "NO USE"
+
+
+// ---------------------------------------------------------------------------------------------
+// @extend %heading;
+%heading {
+  font-family: 'Helvetica Cyrillic', sans-serif;
+  @include text-styles($font-weight: 700, $font-size: 2.6rem, $line-height: 3.12rem);
+  text-transform: uppercase;
+}
+
+// @extend %heading-large;
+%heading-large {
+  @extend %heading;
+  font-size: 2rem;
+}

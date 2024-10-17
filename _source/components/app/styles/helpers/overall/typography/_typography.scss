@@ -1,0 +1,14 @@
+.title {
+  @include text-styles($font-size: 2.3rem,
+    $font-weight: 600,
+    $line-height: 23px,
+  );
+}
+
+
+.subtitle {
+  @include text-styles($font-size: 1.6rem,
+    $font-weight: 600,
+    $line-height: 1,
+  );
+}

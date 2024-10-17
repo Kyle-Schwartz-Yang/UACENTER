@@ -1,0 +1,75 @@
+@mixin grid-container($columns: null,
+  $gap: null,
+  $align-items: null,
+  $justify-content: null,
+  $flex-direction: null) {
+  display: grid;
+
+  @if $columns !=null {
+    grid-template-columns: repeat($columns, 1fr);
+  }
+
+  @if $gap !=null {
+    gap: $gap;
+  }
+
+  @if $align-items !=null {
+    align-items: $align-items;
+  }
+
+  @if $justify-content !=null {
+    justify-content: $justify-content;
+  }
+
+  @if $flex-direction !=null {
+    @if $flex-direction ==column {
+      grid-auto-flow: row;
+    }
+
+    @else {
+      grid-auto-flow: column;
+    }
+  }
+}
+
+@mixin grid-item($column-start: null,
+  $column-end: null,
+  $row-start: null,
+  $row-end: null,
+  $justify-self: null,
+  $align-self: null) {
+  @if $column-start !=null {
+    grid-column-start: $column-start;
+  }
+
+  @if $column-end !=null {
+    grid-column-end: $column-end;
+  }
+
+  @if $row-start !=null {
+    grid-row-start: $row-start;
+  }
+
+  @if $row-end !=null {
+    grid-row-end: $row-end;
+  }
+
+  @if $justify-self !=null {
+    justify-self: $justify-self;
+  }
+
+  @if $align-self !=null {
+    align-self: $align-self;
+  }
+}
+
+
+/*
+.container {
+  @include grid-container($columns: 3, $gap: 20px, $align-items: center);
+}
+
+.item {
+  @include grid-item($column-start: 1, $column-end: 3);
+}
+*/

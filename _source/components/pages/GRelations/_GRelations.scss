@@ -1,0 +1,28 @@
+.relations {
+
+
+  &__container {}
+
+  // .relations__title
+
+  &__title {
+    margin-bottom: 3rem;
+
+  }
+
+  // .relations__content
+
+  &__content {
+    max-width: 80%;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  // .relations__text
+
+  &__text:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}

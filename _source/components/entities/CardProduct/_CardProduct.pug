@@ -1,0 +1,58 @@
+
+//- $ MIXIN CardContent
+mixin CardContent(className, card)
+  -
+    //- ---------------------------------------------------
+    const truncateText = (text, length) => {
+              if (!text) return '';
+              if (text.length <= length) return text;
+              return text.slice(0, length) + '...';
+            }
+    //- ---------------------------------------------------
+  -
+  a(href='#' class=`${className}__link`)
+    figure(class=`${className}__media`)
+      img(src=card.image ? card.image : '', alt="image")
+      figcaption.card__overlay(class=`${className}__overlay`)
+        div(class=`${className}__content`)
+          div(class=`${className}__preview`)
+            div(class=`${className}__video-wrapper`)
+              video(class=`${className}__video` autoplay loop muted)
+                //- source(src="/assets/media/example-video.webm", type="video/webm")
+        div(class=`${className}__info`)
+          h4(class=`${className}__title`) #{card.title ? card.title : 'No title'}
+          p(class=`${className}__txt`) #{card.txt ? truncateText(card.txt, 200) : 'No description'}
+
+//- $ MIXIN CardFooter
+mixin CardFooter(className, card)
+  div(class=`${className}__footer`)
+    div(class=`${className}__actions`)
+      button(type="button" class=`${className}__purchase-btn`)
+        span buy
+        span: i(class="bi bi-cart4")
+    div(class=`${className}__pricing`)
+      span.original-price #{card.oldPrice ? card.oldPrice : '999 $'}
+      span.discounted-price #{card.newPrice ? card.newPrice : '256 $'}
+    div(class=`${className}__likes`)
+      span.heart-icon: i(class="bi bi-suit-heart-fill")
+      span.likes-count #{card.likes ? card.likes : '1.618'}
+
+//- ---------------------------------------------------------------------------
+
+mixin CardProduct(selector, data)
+  -
+    //- const defaultClass = 'card'
+    const className = 'card'
+
+  if data && data.length > 0
+    each card in data
+      div(class=`${selector} ${className}` data-content-system=card.category ? card.category : null)
+        +CardContent(className, card)
+        +CardFooter(className, card)
+  else
+    template#card-template
+      div(class=`${selector ? selector : ''} ${className}`)
+        +CardContent(className, [])
+        +CardFooter(className,[])
+
+

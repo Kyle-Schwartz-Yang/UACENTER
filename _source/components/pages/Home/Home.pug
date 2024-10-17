@@ -1,0 +1,62 @@
+//- ----------------------------Наследственность
+//- extends ../shared/settings/pug/core/_loyaout.pug
+extends ../../app/pug/_loyaout.pug
+//- ----------------------------Наследственность
+
+//-! -------------------------------------- PART
+include ../../shared/components/Accordion/_Accordion.pug
+
+
+//-! -------------------------------------- PART
+
+//-* -------------------------------------HEAD
+block settings
+  -
+    var settings = {
+      title: 'UA CENTER',
+      lang: 'uk',
+    }
+
+prepend connection 
+  link(rel="stylesheet", href="./css/main.css")
+//-* -------------------------------------HEAD
+
+
+//-: --------------------------------------BODY
+
+block content
+  
+  main.main 
+    section.hero
+      .hero__container
+        header.hero__header.dark-theme
+          h1.hero__title.title Забезпечуємо механізм вирішення запиту протягом 48 годин у будь-якій цивілізованій країні.
+          p.hero__subtitle Шляхом інноваційних практик GR, заснованих на міжнародних стандартах, фундаментальних принципах етики та нульової толерантності до корупції
+        article.hero__mission.mission
+          .mission__box
+            .mission__content
+              h2.mission__title Наша <br> Місія
+              p.mission__text Створювати найкращі умови партнерства та співробітництва між Україною, Америкою та рештою світу. Ми прагнемо забезпечити прозорість і взаєморозуміння у всіх наших спільних проектах, щоб кожен партнер міг досягти своїх цілей ефективно та без перешкод.
+              p.mission__text Ми завжди готові порекомендувати кращих фахівців з питань, які виходять за рамки нашого основного фокусу. Наша мета — надати вам найкращу підтримку у всіх аспектах вашого бізнесу.
+              ul.mission__partners 
+                li.partner-logo.dark-theme: span Pictet
+                li.partner-logo.dark-theme: span Vontobel
+                li.partner-logo.dark-theme: span J.P.Morgan
+            nav.mission__nav
+              +_Accordion([{title: 'Навігація сайту', active: '_active'}], {}, {'data-spollers': '1200, max'})
+                ul.mission__nav-list
+                  li: a(href='/html/international.html') Міжнародне резидентство
+                  li: a(href='/html/Tax.html') Податкове структурування
+                  li: a(href='/html/financing.html') Фінансування проектів
+                  li: a(href='/html/relations.html') GR на всіх рівнях
+                  li: a(href='/html/safety.html') Безпека бізнесу
+
+
+        //- +horizontal()
+        .hero__accordion
+          +_Accordion(null, {})(id='accordion-home')
+
+block scripts
+  script(type="module", src=`./script/app.js`)
+//-: --------------------------------------BODY
+

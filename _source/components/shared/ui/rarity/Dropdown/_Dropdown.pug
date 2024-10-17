@@ -1,0 +1,36 @@
+
+mixin _Dropdown(options = {})
+
+  -
+    const {
+      label = 'dropdown',
+    } = options
+  -
+  li.dropdown__item
+    .dropdown__image: <i class="bi bi-search"></i>
+    a(href='#')
+      span= label
+      <i class="bi bi-caret-down-fill dropdown__arrow"></i>
+    ul.dropdown__menu
+      if block 
+        block
+
+
+
+//---------------------------
+  nav.nav
+    .nav__container
+      .nav__menu(id='nav-menu')
+        ul.nav__list 
+          li.nav__item: a.nav__link(href="#") Первый уровень
+          +Dropdown()
+            li.nav__item: a.nav__link(href="#") Второй уровень
+            +Dropdown()
+              li.nav__item: a.nav__link(href="#") Третий уровень
+              li.nav__item: a.nav__link(href="#") Третий уровень
+              li.nav__item: a.nav__link(href="#") Третий уровень
+                
+            li.nav__item: a.nav__link(href="#") Второй уровень
+          li.nav__item: a.nav__link(href="#") Первый уровень
+          +Dropdown()
+            li.nav__item: a.nav__link(href="#") Второй уровень

@@ -1,0 +1,27 @@
+// ---------------------------------------------------------------------------------------------
+//@extend %button-reset;
+%button-reset {
+  // all: unset; 
+  // all-(иногда вызывает проблемы,используя width:100%, height:100% для кнопки)
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// ---------------------------------------------------------------------------------------------
+//@extend %button-base;
+%button-base {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// ---------------------------------------------------------------------------------------------

@@ -1,0 +1,24 @@
+.contacts {
+  // border: 1px solid red;
+  // height: 5000px;
+}
+
+.contacts {
+  // margin-bottom: 5rem;
+
+  &__container {}
+
+  &__content {
+    @include flexbox(flex, null, center, row, wrap, 5rem);
+  }
+
+  &__maps {
+    flex: 1 1 50%;
+  }
+
+  &___details {
+    flex-basis: 50%;
+  }
+
+
+}

@@ -1,0 +1,12 @@
+
+mixin NavLink(href, text, activeRoute)
+  //- Определяем активный маршрут
+  - const isActive = activeRoute === href
+
+  //- Рендерим ссылку с классами active и переданными атрибутами
+  a(href=href, class=isActive ? `_active` : '')&attributes(attributes)  #{text}
+  //- # Использование:
+    +NavLink('/about', 'About', '/about')(class='menu__link')
+    +NavLink('/about', 'About', aboutPath)(class='menu__link')
+
+

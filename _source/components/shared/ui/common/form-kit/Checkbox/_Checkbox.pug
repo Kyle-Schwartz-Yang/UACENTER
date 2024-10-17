@@ -1,0 +1,14 @@
+
+
+mixin Checkbox(title)
+  .checkbox
+    input(type="checkbox" name='agreement' id='formAgreement').checkbox__input._req
+    label(for="formAgreement").checkbox__label 
+      <span> I give my consent for the processing of personal data in accordance with the current privacy policy of the organization handling the data. <a href="#">read privacy policy</a>   </span>
+
+
+
+//- 
+  mixin Checkbox(label)
+  input(type='checkbox' id='checkbox-'+label.toLowerCase() name='checkbox-'+label.toLowerCase())
+  label(for='checkbox-'+label.toLowerCase())= label

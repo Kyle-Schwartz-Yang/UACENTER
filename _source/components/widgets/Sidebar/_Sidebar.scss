@@ -1,0 +1,72 @@
+.sidebar {
+  text-transform: uppercase;
+  position: fixed;
+  left: 0rem;
+  top: 0rem;
+
+  width: 100%;
+  height: 100%;
+
+
+  &__container {}
+
+  &__nav {
+    max-width: 32rem;
+  }
+
+  &__title {
+
+    @include text-styles($font-weight: 600,
+      $font-size: 1.6rem,
+      $line-height: 2.4rem,
+    );
+    max-width: 60%;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+
+  &__list {
+
+    & li:not(:last-child) {
+      margin-bottom: 1rem;
+      line-height: 24px;
+    }
+
+    & a {
+      display: inline-block;
+      @include text-styles($font-weight: 600, $font-size: 2rem, $line-height: 24px);
+      padding: 1rem;
+      min-width: 15rem;
+
+      transition: background-color .33s ease-in-out;
+
+      &:hover {
+        background-color: var(--color-black);
+        color: var(--color-white);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+
+  &__button {
+    @include flexbox(flex, null, null, column, nowrap, 5rem);
+  }
+
+
+  &__contact {
+    @include text-styles($font-weight: 600,
+      $font-size: 1.8rem,
+      $line-height: 1.2,
+      $letter-spacing: .1rem);
+    text-decoration: underline;
+
+
+  }
+}

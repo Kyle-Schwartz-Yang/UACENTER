@@ -1,0 +1,22 @@
+.contact-details {
+  // padding: 1rem;
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.44rem;
+  }
+
+  &__item {
+    max-width: 53rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.44rem;
+    }
+  }
+
+  &__marker {
+    text-transform: uppercase;
+    padding: .5rem 1rem .5rem 0rem;
+  }
+}

@@ -1,0 +1,47 @@
+//*Background                   (START) 
+//-------------------------
+//>Описание: Подключения background. (Просто удобно)
+//-------------------------
+// Snippet @background
+//# EXP:  @include background(image, color, repeat, position, size, attachment);
+@mixin background($image,
+  $color: null,
+  $repeat: null,
+  $position: null,
+  $size: null,
+  $attachment: null, ) {
+  background-image: url(#{$image});
+
+  @if $color !=null {
+    background-color: $color;
+  }
+
+  @if $repeat !=null {
+    background-repeat: $repeat;
+  }
+
+  @if $size !=null {
+    background-size: $size;
+  }
+
+  @if $position !=null {
+    background-position: $position;
+  }
+
+  @if $position !=null {
+    background-attachment: $attachment;
+  }
+
+}
+
+//-------------------------
+//>Описание: Подключение формата WEPB. Используя @supports {}
+//-------------------------
+//@include background-image-webp('/img/image.webp');
+@mixin background-image-webp($image-path) {
+  @supports (background-image: url(#{$image-path})) {
+    background-image: url(#{$image-path});
+  }
+}
+
+//*Background               (EMD)

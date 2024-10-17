@@ -1,0 +1,53 @@
+//-------------------------
+//<Описание отсуствует. 
+//-------------------------
+//@include animation-delays($selector:'.box__image', $total-items: 4, 0.4s, 0.2s, $ifElse: true/false);
+//&:nth-child().animation #{$selector} - true
+//&.animation #{$selector}:nth-child() - false
+@mixin animation-delays($selector, $total-items, $initial-delay: 0.2s, $delay-increment: 0.2s, $ifElse) {
+  @for $i from 1 through $total-items {
+
+    @if($ifElse) {
+      &:nth-child(#{$i}).animation #{$selector} {
+        transition-delay: $initial-delay + ($delay-increment * ($i - 1));
+      }
+    }
+
+    @else {
+      &.animation #{$selector}:nth-child(#{$i}) {
+        transition-delay: $initial-delay + ($delay-increment * ($i - 1));
+      }
+    }
+
+  }
+}
+
+//-------------------------
+//<Описание отсуствует. 
+//-------------------------
+//@include animation-play-cards(0.5s);
+@mixin animation-delays-easy($total-items, $initial-delay: 0.2s, $delay-increment: 0.2s, ) {
+  @for $i from 1 through $total-items {
+
+    &:nth-child(#{$i}).animation {
+      transition-delay: $initial-delay - ($delay-increment * ($i - 1));
+    }
+  }
+}
+
+//-------------------------
+//>Описание: default animation
+//-------------------------
+//  @include animation-motion(0s); 
+@mixin animation-motion($transition-delay: 0s) {
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all .8s ease-in-out $transition-delay;
+
+  &.animation,
+  .animation & {
+    transform: translate(0px, 0%);
+    opacity: 1;
+    transition: all .8s ease-in-out $transition-delay;
+  }
+}

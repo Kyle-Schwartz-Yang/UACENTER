@@ -1,0 +1,65 @@
+// ------------------------------------------------------------------------------------
+
+/*
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('#{$assets}/fonts/lato-v15-latin-900.woff2') format('woff2'),
+    url('#{$assets}/fonts/lato-v15-latin-900.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    src: url('#{$assets}/fonts/lato-v15-latin-regular.woff2') format('woff2'),
+    url('#{$assets}/fonts/lato-v15-latin-regular.woff') format('woff');
+  }
+*/
+
+
+// ------------------------------------------------------------------------------------
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  src: url('#{$assets}/fonts/Manrope-Regular.woff') format('woff')
+}
+
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 900;
+  src: url('#{$assets}/fonts/Manrope-Bold.woff') format('woff')
+}
+
+// ---------------------- Life Savers
+
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 800;
+  src: url('#{$assets}/fonts/LifeSavers-ExtraBold.woff') format('woff')
+}
+
+
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 500;
+  src: url('#{$assets}/fonts/LifeSavers-Regular.woff') format('woff')
+}
+
+
+@font-face {
+  font-family: 'Simpson';
+  font-style: normal;
+  font-weight: 500;
+  src: url('#{$assets}/fonts/Simpsonfont.woff') format('woff')
+}
+
+
+
+// ==================================================================================

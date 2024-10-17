@@ -1,0 +1,131 @@
+.about-header {
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__body {
+    max-width: 66%;
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+
+  }
+
+  &__txt {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__blockquote {
+    font-style: italic;
+  }
+
+  &__cite {}
+}
+
+// -------------------------------------
+
+.about-products {
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__body {
+    max-width: 66%;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  &__nav {
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__list {
+
+
+    a {
+      display: inline-block;
+      padding: 1rem 0rem;
+      @include text-styles($font-weight: 600, $line-height: 1, );
+
+      transition: background-color .33s ease-in-out;
+
+      &:hover {
+        background-color: var(--color-black);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &__txt {
+    font-style: italic;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+
+  }
+}
+
+// -------------------------------------
+.about-values {
+
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__body {
+    max-width: 66%;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  &__txt {
+    &:nth-of-type(2) {
+      font-style: italic;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}

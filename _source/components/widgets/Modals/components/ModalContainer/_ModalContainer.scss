@@ -1,0 +1,91 @@
+.modals-group {
+  //: .hidden { active }
+}
+
+.modal {
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  // ------------------------------
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  @include flexbox(flex, center, center, null, null, null);
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: var(--ten);
+  transition: opacity ease .66s;
+  cursor: pointer;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__wrapper {
+      transform: translateX(0vw);
+      transition: .66s;
+      transition-delay: .33s;
+    }
+  }
+
+  &__wrapper {
+    cursor: initial;
+    transform: translateX(-100vw);
+
+    position: relative;
+    /*
+Примерные стили :
+  width: 30vw;
+  height: 30vh;
+  min-width: 500px;
+  min-height: 300px;
+  background-color: #fff;
+  color: #363636;
+  padding: 15px;
+    */
+  }
+
+
+  // .modal__body
+  &__body {}
+
+  // .modal__close
+  &__cross {
+
+    position: absolute;
+    z-index: var(--ten);
+    top: 1px;
+    right: 1px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 2rem;
+    border-top-right-radius: 2rem;
+    // border-radius: 50%;
+    background-color: #ed510f;
+    box-shadow: 0 3px 6px rgba(237, 236, 239, .2), 0 -3px 6px rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.3);
+    transition: all ease-in-out .33s;
+
+    &:hover {
+      background-color: #f0723c;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2rem;
+      height: .2rem;
+      background-color: #bdb7b7;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+}

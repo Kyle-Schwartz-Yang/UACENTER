@@ -1,0 +1,166 @@
+.hero {
+  &__container {}
+
+  &__header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 5rem 3rem 10rem;
+    margin-bottom: 4.5rem;
+
+    // ---------------------------------
+    @media (max-width: 992px) {
+      padding: 2rem 2rem 4rem;
+      margin-bottom: 3rem;
+    }
+
+    // ---------------------------------
+  }
+
+  &__title {
+    max-width: 65%;
+    margin-bottom: 5rem;
+
+    // ---------------------------------
+    @media (max-width: 992px) {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    // ---------------------------------
+  }
+
+
+  &__subtitle {
+    max-width: 65%;
+
+    // ---------------------------------
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+
+    // ---------------------------------
+  }
+
+  &__mission {}
+
+  &__accordion:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+
+}
+
+//!----------------------------------------- 
+.mission {
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+
+  &__box {
+    @include flexbox(flex, space-between, center, row, null, 4rem);
+
+    @media (max-width: 1200px) {
+      @include flexbox(flex, space-between, center, row, null, 4rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+  }
+
+  &__content {
+    flex-basis: 60%;
+
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+
+
+  &__partners {
+    @include flexbox(flex, space-between, null, row, nowrap, 2rem);
+
+    @media (max-width: 992px) {
+      @include flexbox(flex, null, null, column, nowrap, 2rem);
+    }
+
+    @media (max-width: 768px) {
+      @include flexbox(flex, space-between, null, row, nowrap, 2rem);
+    }
+
+    @media (max-width: 576px) {
+      @include flexbox(flex, null, null, column, nowrap, 2rem);
+    }
+
+    li {
+      flex-basis: 30%;
+    }
+
+  }
+
+
+  &__nav {
+    flex-basis: 40%;
+
+    @media (max-width: 1200px) {
+      width: 100%;
+      flex-basis: 100%;
+    }
+
+  }
+
+  &__nav-list {
+    & li:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    & a {
+
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      font-weight: 600;
+      color: var(--color-white);
+      background-color: var(--accent-background);
+
+      &:hover {
+        color: silver; //????
+      }
+    }
+  }
+
+}
+
+.partner-logo {
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  @include flexbox(flex, center, center, null, null, null);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  padding: 2rem 1rem;
+}
+
+.dark-theme {
+  //??? ЗАМЕНИ .theme-change
+}
+
+//!----------------------------------------- 

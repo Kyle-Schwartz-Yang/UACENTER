@@ -1,0 +1,43 @@
+.tax {
+
+  // .international__container
+
+  &__container {}
+
+  // .international__title
+
+  &__title {
+    &:not(:last-child) {
+      margin: 0px 0px 3rem 0px;
+    }
+  }
+
+  // .international__body
+
+  &__body {
+    max-width: 66%;
+
+    &:not(:last-child) {
+      margin: 0px 0px 5rem 0px;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  // .international__txt
+
+  &__txt {
+    &:not(:last-child) {
+      margin: 0px 0px 2rem 0px;
+    }
+
+    & strong {
+      text-transform: uppercase;
+    }
+  }
+
+  // .international__contacts
+  &__contacts {}
+}

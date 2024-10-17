@@ -1,0 +1,30 @@
+//:-------------------------------------- Path: Аliases
+$assets: '../assets';
+//# background: url('#{$assets}/images/13.jpg');
+//:-------------------------------------- Path: Аliases
+
+//!SCSS ПЕРЕМЕННЫЕ
+$f-size-rem: 10px; // for rem
+$f-size-default: 1.6rem;
+$font-face: "Helvetica Cyrillic", sans-serif;
+
+//===============================================
+
+
+
+//: --------------------------------------------------------------(@MEDIA)
+// -----------------------------Descrtop first:
+//#   @media (max-width: $sm) {   body {  font-size: 18px; }   }
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1260px;
+$xxl: 1410px;
+// -----------------------------Mobile first:
+//#   @media (min-width: $msm) {   body {  font-size: 18px; }   }
+$msm: 575px;
+$mmd: 767px;
+$mlg: 991px;
+$mxl: 1219px;
+$mxxl: 1409px;
+//: --------------------------------------------------------------(@MEDIA)

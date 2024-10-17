@@ -1,0 +1,39 @@
+// -----------------------------------НАСТРОЙКИ ПРОЕКТА
+@import './settings/_nullstyle';
+@import './settings/_root-variables';
+@import './settings/_scss-variables';
+@import './settings/_font-faces';
+
+// ------------------------HELPER
+@import './helpers/_index.scss'; //-(mixin, placeholder, keyframes, overall)
+// ------------------------HELPER
+
+@import './settings/_settings-project';
+// -----------------------------------НАСТРОЙКИ ПРОЕКТА
+
+
+// ------------------------------------------ common widgets
+@import '../../widgets/Header/_Header.scss';
+@import '../../widgets/Footer/_Footer.scss';
+@import '../../widgets/Sidebar/_Sidebar.scss';
+// -------------------------------------------- common widgets
+
+
+// -------------------------------------------- common Components
+@import '../../shared/components/Accordion/_Accordion.scss';
+@import '../../shared/components/ToggleTheme/_ToggleTheme.scss';
+@import'../../shared/components/Contact-details/_Contact-details.scss';
+@import '../../widgets/GoogleMaps/_GoogleMaps.scss';
+// -------------------------------------------- common Components
+
+
+// ------------------------------------------------------PAGE
+@import '../../pages/Home/_Home.scss';
+@import '../../pages/Contacts/_Contacts.scss';
+@import '../../pages/GRelations/_GRelations.scss';
+@import '../../pages/About/_About.scss';
+@import '../../pages/Financing/_Financing.scss';
+@import '../../pages/International/_International.scss';
+@import '../../pages/Tax/_Tax.scss';
+@import '../../pages/Safety/_Safety.scss';
+// ------------------------------------------------------PAGE

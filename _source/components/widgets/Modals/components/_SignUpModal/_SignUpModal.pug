@@ -1,0 +1,45 @@
+
+
+include ../../../../shared/ui/common/form-kit/Checkbox/_Checkbox.pug
+include ../../../../shared/ui/common/form-kit/Labeled-input/_Labeled-input.pug
+include ../../../../shared/ui/common/Button/_Button.pug
+
+include ../ModalContainer/_ModalContainer.pug
+
+
+mixin SignUp()
+  -
+    const options = {
+      namedForm: 'form-signin',
+      title: 'Sign Up',
+    }
+    //- const {name, surname} = data
+    const {namedForm, title} = options
+    //- (class= `${namedForm}__title`)
+  -
+  div(class=`${namedForm}`)
+    form(action = '#' class= `${namedForm}__body` id=`${namedForm}`)
+      h1(class= `${namedForm}__title`) #{title}
+      div(class= `${namedForm}__item`) 
+        +Labeled-input({
+          options: {type: 'text', unique: 'formSigninLogin', name: 'login', placeholder: 'Enter your email', label: 'Email address*:'},
+          inputAttributes: {['aria-label']: 'Enter your Username', class: `${namedForm}__input _req _email`},
+          labelAttributes: {['aria-label']: 'Enter your Username', class: `${namedForm}__label`},
+          })
+      div(class= `${namedForm}__item`)
+        a(href="/" class= `${namedForm}__link`) Forgot password?
+        +Labeled-input({
+          options: {type: 'password', unique: 'formSigninPass', name: 'password', placeholder: 'Enter your password', label: 'Password*:'},
+          inputAttributes: {['aria-label']: 'Enter your password', class: `${namedForm}__input _req`},
+          labelAttributes: {['aria-label']: 'Enter your password', class: `${namedForm}__label`},
+          })
+      div(class= `${namedForm}__item`) 
+        //-$---Input Checkbox (mixin)
+        +Checkbox()
+      +Button({type: 'submit', variant: 'button-global', className: `${namedForm}__submit button-animated`, text: 'Submit'})
+
+
+mixin SignUpModal()
+  - const uniqueNamed = 'signin-modal'
+  +ModalContainer(uniqueNamed)
+    +SignUp()

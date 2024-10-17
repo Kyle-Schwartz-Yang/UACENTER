@@ -1,0 +1,7 @@
+mixin GoogleMaps()
+  -
+    const SRC_MAPS = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.4223068555516!2d-0.1582644271815805!3d51.52381367476573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761acf33628211%3A0x445d7677a88322e1!2zMjIxQiBCYWtlciBTdCwgTG9uZG9uIE5XMSA2WEUsINCS0LXQu9C40LrQvtCx0YDQuNGC0LDQvdC40Y8!5e0!3m2!1sru!2sua!4v1723925901081!5m2!1sru!2sua'
+  -
+  .maps
+    div.maps__spinner(id='map-spiner')
+    <iframe id="map-frame" src=#{SRC_MAPS} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

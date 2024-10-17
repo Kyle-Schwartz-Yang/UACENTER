@@ -1,0 +1,49 @@
+mixin Labeled-input(data={})
+  -
+    let defaultData = {
+      options: {
+        type: 'text',
+        unique: 'signInName',
+        name: 'name',
+        value: null,
+        placeholder: 'Enter your name',
+        label: 'Your Name ?',
+      },
+      className: {
+        label: 'label',
+        input: 'input',
+      },
+      labelAttributes: {},
+      inputAttributes: {}
+    }
+    const finalData = {...defaultData, ...data}
+  -
+  //- .input-group&attributes(attributes) Нужен родитель ?
+  label(for=finalData.options.unique,class=finalData.className.label )&attributes(finalData.labelAttributes)= finalData.options.label
+  input(
+    id=finalData.options.unique,
+    type=finalData.options.type,
+    name=finalData.options.name,
+    value=finalData.options.value,
+    placeholder=finalData.options.placeholder,
+    class=finalData.className.input
+  )&attributes(finalData.inputAttributes)
+
+
+//-#---Использовать
+  +Labeled-input({
+      className: {label:'form__label', input: 'form__input _req',
+      options: {  type: 'text', unique: 'signInName', name: 'name', value: null, placeholder: 'Enter your name', label: 'Your Name ?'},
+    }}) 
+  ------------------------------------------------------------
+  +Labeled-input({
+      options: { ... },
+      labelAttributes: { ... },
+      inputAttributes: { ... }
+    })(class="custom-input-group")
+  -------------------------------------------------------------
+  +Labeled-input({
+      options: {type: 'text', unique: 'f-default-Name', name: 'name', value: null,placeholder: 'Enter your name', label: 'Your Name ?'},
+      inputAttributes: {['aria-label']: 'Enter your name', class: 'form__input _req'},
+      labelAttributes: {['aria-label']: 'Enter your name', class: 'form__label'},
+    })

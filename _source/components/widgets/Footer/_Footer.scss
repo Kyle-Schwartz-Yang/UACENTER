@@ -1,0 +1,20 @@
+.footer {
+  margin-top: 7rem;
+  // border: 1px solid red;
+  padding: 3rem 1rem;
+  z-index: var(--nine);
+
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 3rem;
+  }
+
+
+  & strong {
+    font-weight: 800;
+  }
+}

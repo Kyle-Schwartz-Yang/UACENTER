@@ -1,0 +1,8 @@
+.logo {
+  @include text-styles($font-weight: 600,
+    $font-size: 2rem,
+    $line-height: 4.4rem,
+    $letter-spacing: .2rem, );
+  text-transform: uppercase;
+  padding: 1rem;
+}

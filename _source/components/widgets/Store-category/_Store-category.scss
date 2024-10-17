@@ -1,0 +1,29 @@
+// @import '../../_fragments/TabbedSystem/_Tabbed-system.scss';
+
+
+
+.store-category {
+  padding: 20rem 0px;
+  min-height: 100vh;
+  position: relative;
+  background: var(--BG-default);
+
+  @media (max-width: 768px) {
+    padding: 10rem 0px;
+  }
+
+  @media (max-width: 479px) {
+    padding: 5rem 0px;
+  }
+
+  &__container {}
+}
+
+// ---------------------------------------------------
+
+@media (max-width: 768px) {
+  .store-category .sections__title {
+    position: static;
+    margin: 0rem 0rem 3rem 3rem;
+  }
+}

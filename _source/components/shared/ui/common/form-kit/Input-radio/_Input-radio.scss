@@ -1,0 +1,64 @@
+.options {
+
+  // .options__item
+
+  &__item {
+    margin-bottom: 1.5rem;
+  }
+
+  // .options__input
+
+  &__input {
+    //? display: none;
+    /*
+    - Мне кажется что использовать  display: none; для скрытие не совсем коректно
+    - Поэтому я буду использовать специальный класс .hidden
+    */
+
+    &:checked+.options__label::after {
+      transform: scale(1);
+    }
+
+  }
+
+  // .options__label
+
+  &__label {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+
+    line-height: 1.4;
+    position: relative;
+    cursor: pointer;
+
+
+    &::before {
+      content: '';
+      align-self: flex-start;
+      flex: 0 0 24px;
+      height: 24px;
+
+      background: #fff;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      background-color: green;
+      border-radius: 50%;
+      transition: .33s;
+      transform: scale(0);
+    }
+
+    // & span {
+    //   border: 1px solid red;
+    // }
+  }
+}

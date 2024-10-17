@@ -1,0 +1,175 @@
+//1010101001101001010101001010101010010101010100101010101001010101010101010100101010101010
+// ! --------------------------------------------------( BURGER DEFAULT )
+
+//@include burgerDefault('._open', '#fff', true)
+@mixin burgerDefault($className, $bgcolor: null, $hover: null, ) {
+  all: initial;
+  display: inline-block;
+  cursor: pointer;
+  border: initial;
+  background-color: initial;
+
+  height: 30px;
+  width: 50px;
+  position: relative;
+
+  &::after,
+  &::before,
+  & span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $bgcolor;
+    transition: all .33s ease;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+
+  & span {
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+  }
+
+
+  // ---------------------------------------------------&:HOVER
+
+
+  // + УНИКАЛЬНЫЙ HOVER ПОПРОБУЙ
+
+  @if $hover {
+    &:hover {
+      transition: .33s;
+
+      &::after {
+        transform: translateY(1.5px) rotate(-4.5deg);
+      }
+
+      span {
+        transform: translateY(-50%) scale(.95);
+      }
+
+      &::before {
+
+        transform: translateY(-1.5px) rotate(4.5deg);
+
+      }
+    }
+  }
+
+
+  // ---------------------------------------------------&:HOVER
+
+  //ACTIVE
+  &.#{$className}::before {
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg);
+    transition-delay: 0.1s;
+  }
+
+  &.#{$className}::after {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition-delay: 0.1s;
+  }
+
+  &.#{$className} span {
+    transform: scale(0);
+  }
+
+  //ACTIVE
+}
+
+// ! --------------------------------------------------( HAMBURGER )
+@mixin hamburger($className, $color-accent: null, $color-secondory: null) {
+  all: initial;
+  border: initial;
+  background: initial;
+  display: inline-block;
+  position: relative;
+  width: 1.975rem;
+  height: 1.325rem;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: '';
+  }
+
+  &::after,
+  &::before,
+  & span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $color-accent;
+    transition: all .2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+    border-radius: 10%;
+  }
+
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+
+  & span {
+    top: 50%;
+    transform: translateY(-50%) scale(1.3);
+    background-color: $color-secondory;
+  }
+
+  // ---------------------------------- ( ACTIVE )
+
+  &.#{$className} span {
+    transform: scale(0) translateY(-50%);
+  }
+
+  &.#{$className}::before {
+    bottom: 50%;
+    transform: rotate(-225deg) translateY(-50%);
+    // transform: translate(0px, 50%) rotate(-45deg);
+  }
+
+  &.#{$className}:after {
+    top: 50%;
+    transform: rotate(225deg) translateY(50%);
+    // transform: translate(0px, -50%) rotate(45deg);
+  }
+
+}
+
+
+
+
+//1010101001101001010101001010101010010101010100101010101001010101010101010100101010101010
+
+
+// ! --------------------------------------------------( REPEAT BUTTON )
+@mixin buttonDefault($background-color: #fff, $text-color: #000) {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: $background-color;
+  color: $text-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($background-color, 10%);
+  }
+}

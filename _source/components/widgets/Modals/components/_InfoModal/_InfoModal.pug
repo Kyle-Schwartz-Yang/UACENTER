@@ -1,0 +1,32 @@
+
+
+include ../../../../shared/ui/common/Button/_Button.pug
+include ../ModalContainer/_ModalContainer.pug
+
+mixin Info-Content(uniqueNamed)
+  -
+    const options = {
+      text: 'Frontend development is not just about creating interfaces. It is the art of making your ideas visible, tangible and inspiring. Every line of code becomes a brush, every element a part of your virtual canvas.',
+      title: 'Information'
+    }
+  - 
+  div(class=`${uniqueNamed}__content`)
+    div(class=`${uniqueNamed}__title`)
+      span: <i class="bi bi-info-circle-fill"></i>
+      h3 #{options.title}
+    p(class=`${uniqueNamed}__text`) #{options.text}
+    +Button({
+      text: 'Its clear',
+      type: 'button',
+      variant: 'button-global', 
+      className: `${uniqueNamed}__close button-animated`})(aria-label='Close modal' data-close-modal)
+
+
+mixin Info-modal()
+  - const uniqueNamed = 'info-modal' 
+  
+  +ModalContainer(uniqueNamed)
+    +Info-Content(uniqueNamed)
+
+
+

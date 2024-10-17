@@ -1,0 +1,10 @@
+
+
+
+mixin ModalContainer(uniqueModal)
+  .modal(id=uniqueModal class=uniqueModa)
+    .modal__wrapper
+      .modal__body
+        button.modal__cross(aria-label='Close modal')
+        if block 
+          block

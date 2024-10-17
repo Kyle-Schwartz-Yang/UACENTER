@@ -1,0 +1,57 @@
+.toggletheme {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #c0c0c0;
+  box-shadow: var(--box-shadow-default);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  outline: none;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-black);
+    border-radius: 50%;
+
+  }
+
+  &._active {
+    background-color: #3a3a3a;
+    // border: 2px solid var(--color-white);
+
+    &::before {
+      transform: translate(30px, -50%);
+      background-color: var(--accent-color);
+    }
+
+    &:hover::before {
+      transition: .33s;
+      transform: translate(27px, -50%);
+    }
+  }
+
+  // &:focus {
+  // Необезательно
+  //   box-shadow: 0 0 0 2px rgba(0, 8, 15, 0.5);
+  // }
+
+  &:hover::before {
+    transition: .33s;
+    transform: translate(3px, -50%);
+  }
+}

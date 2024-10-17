@@ -1,0 +1,17 @@
+
+mixin Button(props={})
+  -
+    const { 
+      type = 'button',
+      variant = 'default',
+      className = '',
+      text = 'Button'
+    } = props;
+
+  button(
+    type=type,
+    class=`${variant}${className ? ' ' + className : ''}`,
+  )&attributes(attributes)=text
+    if block
+      block 
+

@@ -1,0 +1,41 @@
+.newspaper-clipping {
+
+  // font-family: 'Manrope';
+  // text-transform: uppercase;
+  font-weight: 900;
+
+  line-height: 1.5;
+  font-family: 'Simpson';
+
+
+  span {
+    display: inline-block;
+    padding: .5rem;
+    margin: 0.1rem;
+    font-size: 2rem;
+    color: var(--color-black);
+    background-color: var(--color-satin-linen);
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.1),
+      0 15px 40px rgba(0, 0, 0, .7);
+    border: 3px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+
+  span:nth-child(even) {
+    background-color: var(--secondary-color);
+  }
+
+  span:hover {
+    transform: scale(1.1) rotate(0deg) translateY(0px) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
+  }
+
+
+
+
+}

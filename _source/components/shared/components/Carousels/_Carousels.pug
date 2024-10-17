@@ -1,0 +1,33 @@
+//- ---------------------------------------------------------------------------------------
+//- # Использование:
+//- +swiper({className: 'swiper-dog', navigation: true, pagination: true, scrollbar: true})
+//- ---------------------------------------------------------------------------------------
+mixin swiper(options)
+  .swiper(class=options.className)
+    .swiper-wrapper
+      block swiper-slide
+        .swiper-slide(class=`${options.className}__slide`) Slide 1
+        .swiper-slide(class=`${options.className}__slide`) Slide 2
+        .swiper-slide(class=`${options.className}__slide`) Slide 3
+    if options.pagination
+      .swiper-pagination(class=`${options.className}__pagination`)
+    if options.navigation
+      .swiper-button-prev(class=`${options.className}__button-prev`)
+      .swiper-button-next(class=`${options.className}__button-next`)
+    if options.scrollbar
+      .swiper-scrollbar(class=`${options.className}__scrollbar`)
+
+//- ----------------------------------------------------------------------------------------
+//- Пример использования: 
+      +swiper({className: 'swiper-dog', navigation: true})
+        block swiper-slide
+          .swiper-slide Lorem, ipsum dolor. 1
+          .swiper-slide Lorem, ipsum. 2
+          .swiper-slide Lorem, ipsum dolor. 3
+//- ------------------------------------------------------------
+      +swiper({className: 'swiper-cat', navigation: true})
+        block swiper-slide
+          .swiper-slide Lorem, ipsum dolor. 1
+          .swiper-slide Lorem, ipsum. 2
+          .swiper-slide Lorem, ipsum dolor. 3
+//- ----------------------------------------------------------------------------------------
