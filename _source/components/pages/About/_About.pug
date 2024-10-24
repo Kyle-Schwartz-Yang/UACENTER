@@ -1,4 +1,3 @@
-
 //- ----------------------------Наследственность
 extends ../../app/pug/_loyaout.pug
 //- ----------------------------Наследственность
@@ -23,7 +22,7 @@ block settings
 
     
 block connection
-  link(rel="stylesheet", href=`${stylesPathPage}/style.css`)
+  link(rel="stylesheet", href=`${stylesPath}/style.css`)
 //-* -------------------------------------HEAD
 
 //-: --------------------------------------BODY
@@ -44,11 +43,11 @@ block content
           div.about-products__body
             nav.about-products__nav
               ul.about-products__list
-                lI: a(href="/html/relations.html") GR на всіх рівнях
-                lI: a(href="/html/safety.html") Безпека бізнесу
-                lI: a(href="/html/Tax.html") Податкове структурування
-                lI: a(href="/html/financing.html") Фінансування проектів
-                lI: a(href="/html/international.html") Міжнародне резидентство
+                lI: a(href="relations.html") GR на всіх рівнях
+                lI: a(href="safety.html") Безпека бізнесу
+                lI: a(href="Tax.html") Податкове структурування
+                lI: a(href="financing.html") Фінансування проектів
+                lI: a(href="international.html") Міжнародне резидентство
             p.about-products__txt Ми будуємо мости між культурами та економіками, які відкривають нові горизонти для інвесторів та підприємців.Насамперед ми орієнтовані на підтримку українських та американських бізнесменів у їхньому прагненні стати частиною глобальної спільноти, яка відкриває широкі можливості для розвитку та зростання.
         article.about-values
           h2.about-values__title.subtitle Ценности
@@ -59,7 +58,7 @@ block content
           +Contact-details()
 
 block scripts
-  script(type="module", src=`${scriptPathPage}/app.js`)
+  script(type="module", src=`${scriptPath}/app.js`)
 //-: --------------------------------------BODY
 
 
