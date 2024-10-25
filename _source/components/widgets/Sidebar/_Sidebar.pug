@@ -2,7 +2,7 @@ mixin Sidebar(attrs)
   -
     const ListData = [
       {text: 'Про нас', href: 'about.html'},
-      {text: 'Зв\'язки', href: 'relations.html'},
+      {text: 'Зв\'язки', href: 'grelations.html'},
       {text: 'Кошти', href: 'financing.html'},
     ]
   -
@@ -15,4 +15,4 @@ mixin Sidebar(attrs)
             li: a(href=item.href)=item.text 
         .sidebar__button 
           .sidebar__info: <b>126</b> <br> Країн <br> Партнерів  
-          .sidebar__contact: a(href='/html/contacts.html') <b>Contact Us</b>
+          .sidebar__contact: a(href='contacts.html') <b>Contact Us</b>
